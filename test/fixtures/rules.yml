@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  symtom_id: 1
+  disease_id: 1
+
+two:
+  symtom_id: 1
+  disease_id: 1
