@@ -1,0 +1,19 @@
+<div id="daftar_penyakit">
+	<div class="panel panel-primary">
+	  <div class="panel-heading">Daftar penyakit yang diketahui</div>
+	  <div class="panel-body" style="height: 400px; overflow: auto">
+	    <table class="table table-striped">
+	    <tbody>
+	    <% @diseases.each do |disease|%>
+	    	<tr>
+		    	<td>
+			    	<%= "#{disease.code} #{disease.name}" %>
+		    	</td>
+	    	</tr>
+	    <% end %>
+	    </tbody>
+
+		</table>
+	  </div>
+	</div>
+</div>

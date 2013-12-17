@@ -1,0 +1,34 @@
+<div id="tanya_pakar">
+	<div class="panel panel-success">
+	  <div class="panel-heading">Gejala</div>
+	  <div class="panel-body" style="height: 200px; overflow: auto">
+	    <table class="table table-hover">
+	    <tbody>
+	    <% @symptoms.each do |symptom|%>
+	    	<tr>
+		    	<td>
+			    	<label class="checkbox">
+			    		<input type="checkbox" name="symptoms[]" value="<%= symptom.id %>" /> 
+			    			<%= "#{symptom.code} - #{symptom.symptom} "  %>
+			    	</label>
+		    	</td>
+	    	</tr>
+	    <% end %>
+	    </tbody>
+
+		</table>
+	  </div>
+	</div>
+	<div class="panel panel-info">
+	  <div class="panel-heading">Gejala Terpilih</div>
+	  <div class="panel-body" style="height: 200px; overflow: auto">
+	    Panel content
+	  </div>
+	</div>
+	<div class="panel panel-danger">
+	  <div class="panel-heading">Kemungkinan Penyakit</div>
+	  <div class="panel-body" style="height: 200px; overflow: auto">
+	    Panel content
+	  </div>
+	</div>
+</div>

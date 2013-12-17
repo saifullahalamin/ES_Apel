@@ -7,6 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <a class="brand" href="#">ES Apel</a>
+    <ul class="nav">
+      <li><%= link_to "Home", "\#" %></li>
+      <li><%= link_to "Tanya Pakar", "\#tanya_pakar" %></li>
+      <li><%= link_to "Daftar Penyakit", "\#daftar_penyakit" %></li>
+      <li><%= link_to "Tentang Aplikasi", "\#tentang_aplikasi" %></li>
+    </ul>
+  </div>
+</div>
 
 <%= yield %>
 

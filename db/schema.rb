@@ -23,14 +23,14 @@ ActiveRecord::Schema.define(version: 20131216104509) do
   end
 
   create_table "facts", force: true do |t|
-    t.integer  "symtom_id"
+    t.integer  "symptom_id"
     t.integer  "disease_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "rules", force: true do |t|
-    t.integer  "symtom_id"
+    t.integer  "symptom_id"
     t.integer  "disease_id"
     t.datetime "created_at"
     t.datetime "updated_at"
