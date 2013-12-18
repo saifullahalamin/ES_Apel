@@ -14,3 +14,19 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(function(){
+	$("a[data-toggle=popover]").popover().click(function(e) {
+		e.preventDefault()
+	});	
+
+	$('#tanya_pakar .panel-success .checkbox').on("change",function(){ 
+		$('#tanya_pakar .panel-info tbody').prepend($('#tanya_pakar .panel-success tbody :checkbox:checked').parents('tr'))
+		$('#tanya_pakar .panel-info .checkbox').on("change",function(){ 
+			$('#tanya_pakar .panel-success tbody').prepend($('#tanya_pakar .panel-info tbody :checkbox:not(:checked)').parents('tr'))
+		});
+	});
+
+	//$('#tanya_pakar .panel-info tbody :checkbox:checked').map(function() { return this.value; }).get().join();
+});
+

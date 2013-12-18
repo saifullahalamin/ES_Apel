@@ -7,7 +7,12 @@
 	    <% @diseases.each do |disease|%>
 	    	<tr>
 		    	<td>
-			    	<%= "#{disease.code} #{disease.name}" %>
+			    	<%= link_to "#{disease.code} #{disease.name}", "\#", 
+			    	" data-container" => "body",
+			    	"data-toggle" => "popover",
+			    	"data-placement" => "right",
+			    	"title" => "Info: #{disease.info}", 
+			    	"data-content" => "Penanganan: #{disease.handling} jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj" %>
 		    	</td>
 	    	</tr>
 	    <% end %>
