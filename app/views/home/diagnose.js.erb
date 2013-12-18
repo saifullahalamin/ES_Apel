@@ -1,0 +1,13 @@
+$('#tanya_pakar .panel-danger tbody').children().remove();
+
+var rows = ""
+var diseases = "<%= @results %>";
+
+diseases = diseases.split(",");
+diseases.forEach(function(disease) {
+    rows+="<tr>";
+    rows+="<td>"+disease+"</td>";
+    rows+="</tr>";
+});
+
+$('#tanya_pakar .panel-danger tbody').append(rows);

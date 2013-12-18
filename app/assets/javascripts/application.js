@@ -18,7 +18,7 @@
 $(function(){
 	$("a[data-toggle=popover]").popover().click(function(e) {
 		e.preventDefault()
-	});	
+	});
 
 	$('#tanya_pakar .panel-success .checkbox').on("change",function(){ 
 		$('#tanya_pakar .panel-info tbody').prepend($('#tanya_pakar .panel-success tbody :checkbox:checked').parents('tr'))
@@ -27,6 +27,10 @@ $(function(){
 		});
 	});
 
-	//$('#tanya_pakar .panel-info tbody :checkbox:checked').map(function() { return this.value; }).get().join();
+	$('#tanya_pakar input[name=commit]').click(function(){
+		var ids = $('#tanya_pakar .panel-info tbody :checkbox:checked').map(function() {return this.value; }).get().join();
+		$('#tanya_pakar input[name=ids]').val(ids);
+	});
+	
 });
 

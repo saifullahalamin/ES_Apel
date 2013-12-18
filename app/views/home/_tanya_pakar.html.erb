@@ -32,12 +32,13 @@
 	  <div class="panel-body" style="height: 100px; overflow: auto">
 	    <table class="table table-striped">
 		    <tbody>
-		    <tr><td></td></tr>
-		    <tr><td></td></tr>
-		    <tr><td></td></tr>
-		    <tr><td></td></tr>
 		    </tbody>
 		</table>
 	  </div>
 	</div>
+	<%= form_tag({controller: "home", action: "diagnose"}, method: "get", 
+					class: "diagnose_form", remote: true) do %>
+		<%= hidden_field_tag :ids %><br />
+		<%= submit_tag "Diagnosa", class: "btn btn-large btn-danger" %>
+	<% end %>
 </div>
