@@ -31,6 +31,10 @@ $(function(){
 		var ids = $('#tanya_pakar .panel-info tbody :checkbox:checked').map(function() {return this.value; }).get().join();
 		$('#tanya_pakar input[name=ids]').val(ids);
 	});
-	
+
+	$('#tanya_pakar button[name=clear]').click(function(){
+        $('#tanya_pakar .panel-info tbody :checkbox:checked').prop('checked', false);
+        $('#tanya_pakar .panel-success tbody').prepend($('#tanya_pakar .panel-info tbody :checkbox:not(:checked)').parents('tr'));     
+    });
 });
 
