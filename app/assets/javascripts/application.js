@@ -14,6 +14,12 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+// require jsapi
+//= require highcharts
+//= require highcharts/highcharts-more
+//= require chartkick
+//= require dataTables/jquery.dataTables.bootstrap
+//= require dataTables/extras/ZeroClipboard.js
 
 $(function(){
 	$("a[data-toggle=popover]").popover().click(function(e) {
@@ -36,5 +42,13 @@ $(function(){
         $('#tanya_pakar .panel-info tbody :checkbox:checked').prop('checked', false);
         $('#tanya_pakar .panel-success tbody').prepend($('#tanya_pakar .panel-info tbody :checkbox:not(:checked)').parents('tr'));     
     });
+    // For fluid containers
+	$('table#symptoms').dataTable({
+	  "sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
+	  "sPaginationType": "bootstrap"
+	});
+
+    // $('table#symptoms').dataTable();
+
 });
 

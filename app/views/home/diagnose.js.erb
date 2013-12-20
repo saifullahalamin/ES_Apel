@@ -11,3 +11,4 @@ diseases.forEach(function(disease) {
 });
 
 $('#tanya_pakar .panel-danger tbody').append(rows);
+$('#chart').html("<%= escape_javascript(render :partial => 'chart') %>");

@@ -14,6 +14,7 @@ class HomeController < ApplicationController
     # n(A)  : Banyaknya hasil mendapatkan A
 
   	@results = ""
+    @r2 = {};
     ids = (params[:ids]).split(",").map(&:to_i)
 
     fact_temp = Rule.where(symptom_id: ids).group(:disease_id).count #{:disease_id => :symptom_id, :disease_id => :symptom_id}
@@ -35,10 +36,12 @@ class HomeController < ApplicationController
       disease_results.each do |n|
         if n.id == c
           @results += "#{n.code} #{n.name} -- Peluang: #{val}%," 
+          @r2.merge!("#{n.code} #{n.name}" => val)
           disease_results.delete(n)
         end
       end
     end
+    # r2.sort_by{|k,v| v}
 
     # diseases = Disease.where(:symptom_id, ids).includes(:symptoms).map {|d| [d.id, d.name, d.symptoms.size]}
 
@@ -47,7 +50,6 @@ class HomeController < ApplicationController
     # end
 
   	respond_to do |format|
-  		format.html { redirect_to home_index_url }
   		format.js 
   	end
   end
