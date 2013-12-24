@@ -1,4 +1,21 @@
 ActiveAdmin.register Rule do
+  permit_params :disease_id, :symptom_id
+
+  index do
+    column 'Penyakit', :disease_id
+    column 'Penyakit', :disease
+    column 'Gejala', :symptom_id
+    column 'Gejala', :symptom 
+    actions
+  end
+
+  
+  filter :disease_id, as: :select, label: "id penyakit"
+  filter :disease, label: "list penyakit"
+  # filter :disease, as: :text, label: "penyakit"
+  filter :symptom_id, as: :select, label: "id gejala"
+  filter :symptom, label: "list gejala"
+  # filter :symptom, as: :string, label: "gejala"
 
   
   # See permitted parameters documentation:
